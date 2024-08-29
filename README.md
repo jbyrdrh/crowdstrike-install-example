@@ -59,7 +59,7 @@ The Python module dependencies are not automatically handled by `ansible-galaxy`
 ## Authentication
 
 To use this Ansible collection effectively, you'll need to authenticate with the CrowdStrike Falcon API. We've prepared a detailed guide
-outlining the various authentication mechanisms supported. Check out the [Authentication Guide](docs/authentication.md) for step-by-step instructions.
+outlining the various authentication mechanisms supported. Check out the [Authentication Guide](https://github.com/CrowdStrike/ansible_collection_falcon/blob/main/docs/authentication.md) for step-by-step instructions.
 
 ## Using this collection
 
