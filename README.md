@@ -94,3 +94,36 @@ Install and configure the CrowdStrike Falcon Sensor at version N-2:
       # falcon_cid is autodetected using falcon_client_id|secret vars
       falcon_tags: 'falcon,example,tags'
 ```
+
+## Release Notes
+
+See the [changelog](./CHANGELOG.rst) for a history of notable changes to this collection.
+
+## More information
+
+- [Ansible Collection Overview](https://github.com/ansible-collections/overview)
+- [Ansible User Guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
+- [Ansible Using Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
+- [Ansible Community Code of Conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
+- [Ansible Community Code of Conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
+- [Ansible Rulebook Introduction](https://ansible.readthedocs.io/projects/rulebook/en/latest/getting_started.html)
+- [Event Driven Ansible Introduction](https://www.ansible.com/blog/getting-started-with-event-driven-ansible)
+- [CrowdStrike FalconPy SDK](https://www.falconpy.io/)
+
+## Contributing
+
+If you want to develop new content or improve on this collection, please open an issue or create a pull request.
+All contributions are welcome!
+
+As of release > 3.2.18, we will now be following Ansible's development patterns for implementing Ansible's changelog fragments. This will require a changelog fragment to any PR that is not documentation or trivial. Most changelog entries will
+likely be `bugfixes` or `minor_changes`. Please refer to the documentation for [Ansible's changelog fragments](https://docs.ansible.com/ansible/devel/community/development_process.html#creating-changelog-fragments) to learn more.
+
+## Questions or Support?
+
+CrowdStrike Ansible Collection is a community-driven, open source project aimed at simplifying the integration and utilization of CrowdStrike's Falcon platform with Ansible automation. While not an official CrowdStrike product, the CrowdStrike Ansible Collection is maintained by CrowdStrike and supported in collaboration with the open source developer community.
+
+For additional information, please refer to the [SUPPORT.md](./SUPPORT.md) file.
+
+# License
+
+See the [license](LICENSE) for more information.
