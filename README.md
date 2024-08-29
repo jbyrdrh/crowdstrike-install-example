@@ -1,3 +1,5 @@
+The following instructions are taken directly from the official Ansible collection repo: https://github.com/CrowdStrike/ansible_collection_falcon
+
 ## Installing this collection
 
 ### Using `ansible-galaxy` CLI
