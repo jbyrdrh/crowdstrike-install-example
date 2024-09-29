@@ -1,0 +1,41 @@
+{
+ "collection_info": {
+  "namespace": "crowdstrike",
+  "name": "falcon",
+  "version": "4.6.0",
+  "authors": [
+   "CRWD Solutions Architecture <integrations@crowdstrike.com>"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "crowdstrike",
+   "falcon",
+   "sensor",
+   "linux",
+   "windows",
+   "macos",
+   "security",
+   "edr",
+   "xdr",
+   "eda"
+  ],
+  "description": "The Falcon Ansible Collection serves as a comprehensive toolkit for streamlining your interactions with the CrowdStrike Falcon platform.\n",
+  "license": [],
+  "license_file": "LICENSE",
+  "dependencies": {
+   "ansible.windows": ">=1.7.2"
+  },
+  "repository": "https://github.com/CrowdStrike/ansible_collection_crowdstrike",
+  "documentation": "https://github.com/CrowdStrike/ansible_collection_crowdstrike",
+  "homepage": "https://github.com/CrowdStrike/ansible_collection_crowdstrike",
+  "issues": "https://github.com/CrowdStrike/ansible_collection_crowdstrike/issues"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "a44e0e16eb8d3351d65226d5ea3a38f2ce7b7e9ff3b3d1bfdec63e4905c8d92b",
+  "format": 1
+ },
+ "format": 1
+}

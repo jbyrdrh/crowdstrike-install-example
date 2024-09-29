@@ -1,0 +1,6 @@
+---
+- name: Uninstall Falcon
+  hosts: localhost
+  remote_user: root
+  roles:
+    - falcon_uninstall

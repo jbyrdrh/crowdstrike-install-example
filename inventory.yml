@@ -1,0 +1,20 @@
+all:
+  children:
+    windows:
+      hosts:
+        win10:
+          ansible_host: 192.168.122.70  # IP from the first YAML inventory
+      vars:
+        ansible_user: ansible
+        ansible_password: redhat
+        ansible_connection: winrm
+        ansible_winrm_transport: basic  # Change to "ntlm" or "kerberos" for secure setups
+        ansible_winrm_server_cert_validation: ignore
+
+    rhel:
+      hosts:
+        node1.example.com:
+        node2.example.com:
+
+
+

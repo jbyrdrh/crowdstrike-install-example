@@ -1,0 +1,92 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  become: yes
+  tasks:
+  - name: Get list of Falcon Sensor Options
+    crowdstrike.falcon.falconctl_info:
+    register: info_verify
+
+  - name: Verify Falcon Sensor options are set
+    ansible.builtin.assert:
+      that:
+        - info_verify.falconctl_info.cid
+        - info_verify.falconctl_info.billing
+        - info_verify.falconctl_info.tags
+        - not info_verify.falconctl_info.apd
+        - not info_verify.falconctl_info.aph
+        - not info_verify.falconctl_info.app
+        - not info_verify.falconctl_info.trace
+
+  - name: Test Setting Proxy Options
+    ansible.builtin.include_role:
+      name: crowdstrike.falcon.falcon_configure
+    vars:
+      falcon_apd: no
+      falcon_aph: 'example.com'
+      falcon_app: 8080
+
+  - name: Get list of Falcon Sensor Proxy Options
+    crowdstrike.falcon.falconctl_info:
+    register: proxy_info
+
+  - name: Verify Falcon Sensor Proxy options are set
+    ansible.builtin.assert:
+      that:
+        - proxy_info.falconctl_info.apd == 'FALSE'
+        - proxy_info.falconctl_info.aph == 'example.com'
+        - proxy_info.falconctl_info.app == '8080'
+
+  - name: Test Deleting Options
+    ansible.builtin.include_role:
+      name: crowdstrike.falcon.falcon_configure
+    vars:
+      falcon_option_set: no
+      falcon_cid: ""
+      falcon_billing: ""
+      falcon_apd: ""
+      falcon_aph: ""
+      falcon_app: ""
+
+  - name: AID deletion block
+    when: info_verify.falconctl_info.aid
+    block:
+      - name: Test Deleting AID master image prep
+        ansible.builtin.include_role:
+          name: crowdstrike.falcon.falcon_configure
+        vars:
+          falcon_remove_aid: yes
+
+      - name: Get Updated Falcon Sensor Option
+        crowdstrike.falcon.falconctl_info:
+        register: delete_info
+
+      - name: Verify Falcon Sensor options are not set
+        ansible.builtin.assert:
+          that:
+            - not delete_info.falconctl_info.aid
+            - not delete_info.falconctl_info.cid
+            - not delete_info.falconctl_info.apd
+            - not delete_info.falconctl_info.aph
+            - not delete_info.falconctl_info.app
+
+  - name: Auto-detect CID block
+    become: no
+    block:
+      - name: Test auto-detecting CID
+        ansible.builtin.include_role:
+          name: crowdstrike.falcon.falcon_configure
+        vars:
+          falcon_client_id: "{{ lookup('env', 'FALCON_CLIENT_ID') }}"
+          falcon_client_secret: "{{ lookup('env', 'FALCON_CLIENT_SECRET') }}"
+
+  - name: Get CID Option
+    crowdstrike.falcon.falconctl_info:
+      name: 'cid'
+    register: autodetect_info
+
+  - name: Verify CID was configured
+    ansible.builtin.assert:
+      that: autodetect_info.falconctl_info.cid

@@ -1,0 +1,30 @@
+---
+# vars file for falcon_install
+linux_packagers: "{{ rpm_packagers + dpkg_packagers }}"
+
+rpm_packagers:
+  - yum
+  - rpm
+  - dnf
+  - zypper
+
+dpkg_packagers:
+  - apt
+
+falcon_gpg_keys:
+  - falcon-sensor.gpg
+  - falcon-sensor1.gpg
+  - falcon-sensor2.gpg
+
+latest_gpg_key: "{{ falcon_gpg_keys[0] }}"
+
+falcon_cloud_urls:
+  us-1: "api.crowdstrike.com"
+  us-2: "api.us-2.crowdstrike.com"
+  eu-1: "api.eu-1.crowdstrike.com"
+  us-gov-1: "api.laggar.gcw.crowdstrike.com"
+
+falcon_os_arch_dict:
+  x86_64: "+architectures:'x86_64'"
+  aarch64: "+architectures:'arm64'"
+  s390x: "+architectures:'s390x'"
