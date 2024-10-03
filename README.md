@@ -98,4 +98,4 @@ Install and configure the CrowdStrike Falcon Sensor at version N-2:
       falcon_tags: 'falcon,example,tags'
 ```
 
-NOTE: The `crowdstrike.falcon.falcon_configure` role is not needed for the Windows and Mac installations, only Linux.
+**jbyrdrh note**: The `crowdstrike.falcon.falcon_configure` role is not needed for the Windows and Mac installations, only Linux.
