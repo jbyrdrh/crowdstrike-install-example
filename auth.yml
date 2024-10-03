@@ -1,0 +1,5 @@
+---
+- name: Generate Authentication Object
+  crowdstrike.falcon.auth:
+    # If not using ENV variables, use module args here
+  register: falcon

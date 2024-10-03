@@ -1,12 +1,12 @@
 ---
 - name: CrowdStrike Falcon | Authenticate to CrowdStrike API
   crowdstrike.falcon.auth:
-    client_id: "{{ falcon_client_id }}"
+    client_id: "{{ falcon_client_id }}" 
     client_secret: "{{ falcon_client_secret }}"
     cloud: "{{ falcon_cloud }}"
   register: falcon
   run_once: yes
-  no_log: "{{ falcon_api_enable_no_log }}"
+  no_log: false
   delegate_to: localhost
 
 - name: Set falcon_cid Block

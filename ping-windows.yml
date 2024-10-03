@@ -1,0 +1,6 @@
+---
+- name: Test Windows connectivity
+  hosts: win10  # Make sure this matches the group name or specific host in your inventory
+  tasks:
+    - name: Ping the Windows host
+      win_ping:

@@ -1,7 +1,7 @@
-- hosts: localhost
+- hosts: rhel8-server1,rhel8-server2
   vars:
-    falcon_client_id: <your_client_id>
-    falcon_client_secret: <your_secret>
+    falcon_client_id: 
+    falcon_client_secret: 
   roles:
   - role: crowdstrike.falcon.falcon_install
     vars:
