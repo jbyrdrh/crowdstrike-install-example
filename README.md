@@ -79,7 +79,7 @@ outlining the various authentication mechanisms supported. Check out the [Authen
     delegate_to: localhost
 ```
 
-### Example using the built-in roles to install Falcon
+### (Recommended) Example using the built-in roles to install Falcon
 
 Install and configure the CrowdStrike Falcon Sensor at version N-2:
 
@@ -97,3 +97,5 @@ Install and configure the CrowdStrike Falcon Sensor at version N-2:
       # falcon_cid is autodetected using falcon_client_id|secret vars
       falcon_tags: 'falcon,example,tags'
 ```
+
+NOTE: The `crowdstrike.falcon.falcon_configure` role is not needed for the Windows and Mac installations, only Linux.
