@@ -55,7 +55,7 @@ The Python module dependencies are not automatically handled by `ansible-galaxy`
     ```terminal
     pip install crowdstrike-falconpy
     ```
-3. jbyrdrh note: If you are planning to run your playbooks using the Ansible Controller Platform controller UI, then it is recommended to [build a custom execution environment](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html-single/creating_and_consuming_execution_environments/index) and include the `crowdstrike-falconpy` package as well as any other needed dependencies. This custom execution environment can be pushed to Private Automation Hub and then configured to use with your job template(s).
+3. **jbyrdrh note:** If you are planning to run your playbooks using the Ansible Controller Platform controller UI, then it is recommended to [build a custom execution environment](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html-single/creating_and_consuming_execution_environments/index) and include the `crowdstrike-falconpy` package as well as any other needed dependencies. This custom execution environment can be pushed to Private Automation Hub and then configured to use with your job template(s).
 
 ## Authentication
 
