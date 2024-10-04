@@ -100,4 +100,4 @@ Install and configure the CrowdStrike Falcon Sensor at version N-2:
 
 **jbyrdrh note**: The `crowdstrike.falcon.falcon_configure` role is not needed for the Windows and Mac installations, only Linux.
 
-**jbyrdrh Windows note**: In the Ansible Automation Controller UI, it is important to note that you cannot set the winrm connection details for the Windows client at the Job Template level. Instead, it should be set at the **host group level** that you create for your Windows managed nodes. If you set the credentails at the job template, then **both** hosts will try to use those credentials (Windows client *and* the controller localhost, the latter of which does not use winrm).
+**jbyrdrh Windows note**: In the Ansible Automation Controller UI, it is important to note that you cannot set the winrm connection details for your Windows clients at the Job Template level. Instead, they should be configured at the **group level**. If you set the credentials in the Job Template, then **both** Windows and Linux hosts will try to use the winrm connection details, the latter of which does not use winrm.
