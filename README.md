@@ -99,3 +99,5 @@ Install and configure the CrowdStrike Falcon Sensor at version N-2:
 ```
 
 **jbyrdrh note**: The `crowdstrike.falcon.falcon_configure` role is not needed for the Windows and Mac installations, only Linux.
+
+**jbyrdrh Windows note**: It is important to note that you canot set the winrm connection details for the Windows client at the job template level. Instead, I would recommend setting it at the group level that you create for your Windows managed nodes. If you set the credentails at the job template, then both hosts will try to use those credentials (both the Windows client *and* the localhost).
