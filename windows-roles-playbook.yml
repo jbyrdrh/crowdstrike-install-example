@@ -7,9 +7,3 @@
         falcon_client_secret: <FALCON_CLIENT_SECRET>
         falcon_sensor_version_decrement: 2
 
-    - role: crowdstrike.falcon.falcon_configure
-      vars:
-        falcon_client_id: 
-        falcon_client_secret: 
-        falcon_tags: 'falcon,example,tags'
-
